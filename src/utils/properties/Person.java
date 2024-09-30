@@ -1,6 +1,9 @@
+package properties;
+
 import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.time.Year;
 
 public class Person{
 
@@ -56,6 +59,6 @@ public class Person{
   }
 
   public int getAge(){
-    return 0; 
+    return Year.now().getValue() - Integer.valueOf(this.DOB.split("/")[2]); 
   }
 }
