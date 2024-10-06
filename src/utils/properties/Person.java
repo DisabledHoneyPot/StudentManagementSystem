@@ -1,4 +1,4 @@
-package properties;
+package utils.properties;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -12,12 +12,12 @@ public class Person{
   private String lastName;
   private String country;
 
-  public Person(String DOB, String firstName, String lastName, String country){
-    this.DOB = DOB;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.country = country;
-  }
+  //public Person(String DOB, String firstName, String lastName, String country){
+  //  this.DOB = DOB;
+  //  this.firstName = firstName;
+  //  this.lastName = lastName;
+  //  this.country = country;
+  //}
 
   public String getFirstName(){
     return firstName;

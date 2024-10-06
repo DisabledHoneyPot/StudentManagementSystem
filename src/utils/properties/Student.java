@@ -1,13 +1,11 @@
-package properties;
-import properties.Person;
-import properties.ContactInfo;
+package utils.properties; 
 
 class Student extends Person implements ContactInfo{
 
   private String sID;
   private String Grade;
   private String StudentClass;
-  private String Email;
+  private String email;
   private String PhoneNumber;
   private String Address;
 
@@ -36,7 +34,7 @@ class Student extends Person implements ContactInfo{
 
   @Override
   public String getEmail(){
-    return this.Email;
+    return this.email;
   }
   
   @Override
@@ -48,7 +46,7 @@ class Student extends Person implements ContactInfo{
     this.sID = sID;
   }
 
-  public void setGrade(int Grade){
+  public void setGrade(String Grade){
     this.Grade = Grade;
   }
 
@@ -61,12 +59,12 @@ class Student extends Person implements ContactInfo{
   }
   
   @Override
-  public void setEmail(String Email){
-    this.Email = Email;
+  public void setEmail(String email){
+    this.email = email;
   }
 
   @Override
-  public void setPhoneNumber(String PhoneNumber){
-    this.PhoneNumber = PhoneNumber;
+  public void setPhoneNumber(String phoneNumber){
+    this.PhoneNumber = phoneNumber;
   }
 }
