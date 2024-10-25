@@ -10,10 +10,12 @@ class Student extends Person implements ContactInfo{
   private String Address;
 
   public Student(String sID, String Grade, String StudentClass, String Address){
+    super("","","","");
     this.sID = sID;
     this.Grade = Grade;
     this.StudentClass = StudentClass;
     this.Address = Address;
+
   }
   
   public String getsID(){
