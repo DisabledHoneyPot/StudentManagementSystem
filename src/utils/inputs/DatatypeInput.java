@@ -18,7 +18,9 @@ public class DatatypeInput {
     }
 
     public int returnInt(){
-        return inputScanner.nextInt();
+        int temp = inputScanner.nextInt();
+        inputScanner.nextLine();
+        return temp;
     }
 
     public double returnDouble(){

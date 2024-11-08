@@ -1,6 +1,7 @@
-package utils.properties; 
+package utils.properties;
+import java.util.Date;
 
-class Student extends Person implements ContactInfo{
+public class Student extends Person implements ContactInfo{
 
   private String sID;
   private String Grade;
@@ -9,8 +10,8 @@ class Student extends Person implements ContactInfo{
   private String PhoneNumber;
   private String Address;
 
-  public Student(String sID, String Grade, String StudentClass, String Address){
-    super("","","","");
+  public Student(String firstName, String lastName,String DOB ,String country ,String sID, String Grade, String StudentClass, String Address){
+    super(DOB,firstName,lastName,country);
     this.sID = sID;
     this.Grade = Grade;
     this.StudentClass = StudentClass;

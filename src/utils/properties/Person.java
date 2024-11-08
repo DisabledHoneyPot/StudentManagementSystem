@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.time.Year;
+import helpers.formats.DateTimeFormat;
 
 public class Person{
 
@@ -45,7 +46,7 @@ public class Person{
   }
 
   public void setDOB(String NewDOB){
-    SimpleDateFormat dobStringFormat = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat dobStringFormat = new SimpleDateFormat(DateTimeFormat.getDateFormat());
     try{
       Date d1 = dobStringFormat.parse(NewDOB);
       String dobString = dobStringFormat.format(d1);

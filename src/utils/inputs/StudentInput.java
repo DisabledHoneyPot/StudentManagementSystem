@@ -1,62 +1,59 @@
 package utils.inputs;
 
-import java.util.Scanner;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import helpers.formats.DateTimeFormat;
 import utils.inputs.DatatypeInput;
 
 public class StudentInput{
-  public static void main(){
-    String firstName = promptFirstName();
-    String lastName = promptLastName();
-    int age = promptAge();
-    String sID = promptSID();
-    Date dobDate = promptDOBDate();
-  }
-
+  private static DatatypeInput dtInput = new DatatypeInput();
 
   public static String promptFirstName(){
-    Scanner inputScanner = new Scanner(System.in);
-    System.out.print("Please enter student first name: ");
-    String firstName = inputScanner.nextLine();
-    return firstName;
+    return dtInput.DisplayPrompt("Please enter student's first name: ").returnString();
   }
 
   public static String promptLastName(){
-    Scanner inputScanner = new Scanner(System.in);
-    System.out.print("Please enter student last name: ");
-    String lastName = inputScanner.nextLine();
-    return lastName;
+    return dtInput.DisplayPrompt("Please enter student's last name: ").returnString();
   }
 
-    public static int promptAge(){
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Please enter student age: ");
-        int age = inputScanner.nextInt();
-        return age;
-    }
+  public static int promptAge(){
+    return dtInput.DisplayPrompt("Please enter student's age: ").returnInt();
+  }
 
 
-    public static String promptSID(){
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Please enter student ID: ");
-        String sID = inputScanner.nextLine();
-        return sID;
-    }
+  public static String promptSID(){
+    return dtInput.DisplayPrompt("Please enter student's ID: ").returnString();
+  }
 
-    public static Date promptDOBDate(){
-        Scanner inputScanner = new Scanner(System.in);
-        System.out.print("Please enter student's date of birth: ");
-        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        String dob = inputScanner.nextLine();
-        Date formattedDate = null;
-        try{
-            formattedDate = format.parse(dob);
-        }catch (Exception e){
-            System.err.println("Error in inputting date");
-        }
-        return formattedDate;
-    }
+  public static String promptDOBDate(){
 
+      DateFormat format = new SimpleDateFormat(DateTimeFormat.getDateFormat());
+      String dob = dtInput.DisplayPrompt("Please enter student's date of birth in the format "+ DateTimeFormat.getDateFormat()+ ": ").returnString();
+      Date formattedDate = null;
+      try{
+          formattedDate = format.parse(dob);
+          String DateString = format.format(formattedDate);
+          return DateString;
+      }catch (Exception e) {
+          System.err.println("Error in inputting date");
+          return "";
+      }
+  }
+  public static String promptCountry(){
+      return dtInput.DisplayPrompt("Please enter student's country: ").returnString();
+  }
+
+  public static String promptGrade(){
+    return dtInput.DisplayPrompt("Please enter student's grade: ").returnString();
+  }
+
+  public static String promptClass(){
+    return dtInput.DisplayPrompt("Please enter student's class: ").returnString();
+  }
+
+  public static String promptAddress(){
+      return dtInput.DisplayPrompt("Please enter student's address: ").returnString();
+  }
 }
